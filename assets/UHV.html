@@ -1,0 +1,682 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Human Values - Presentation</title>
+    <link rel="stylesheet" href="UHV-styles.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="top-bar">
+            <button class="back-btn" onclick="goHome()">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="#5f6368" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+                <span>Home</span>
+            </button>
+            <div class="slide-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">8</span>
+            </div>
+            <button class="icon-btn" id="fullscreen-btn" onclick="toggleFullscreen()" title="Fullscreen">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="#5f6368" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="slides-wrapper">
+            <div class="slides-container" id="slides-container">
+
+                <!-- SLIDE 1: Intro Video -->
+                <section class="slide slide-1 active" data-slide="1">
+                    <div class="slide-content">
+                        <div class="video-container" id="video-container">
+                            <video id="intro-video" class="intro-video" playsinline>
+                                <source src="intro.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-overlay" id="video-overlay">
+                                <div class="video-title-overlay">
+                                    <h1 class="main-title">Universal Human Values</h1>
+                                    <p class="sub-title">Technology, Physical Facilities and Happiness</p>
+                                    <p class="perspective-text">An MCA Student's Perspective</p>
+                                </div>
+                                <button class="play-button" id="play-button" onclick="playVideo()">
+                                    <svg viewBox="0 0 24 24" width="48" height="48">
+                                        <path fill="#ffffff" d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <div class="video-prompt">Click to Play Intro Video</div>
+                            </div>
+                            <div class="video-controls" id="video-controls" style="display: none;">
+                                <button class="vcontrol-btn" id="v-play-pause" onclick="toggleVideoPause()">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" id="pause-icon">
+                                        <path fill="#ffffff" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                                    </svg>
+                                </button>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar" id="video-progress"></div>
+                                </div>
+                                <span class="video-time" id="video-time">0:00</span>
+                                <button class="vcontrol-btn" onclick="skipVideo()">
+                                    <svg viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="#ffffff" d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 2: Technology, Physical Facilities & Happiness -->
+                <section class="slide slide-2" data-slide="2">
+                    <div class="slide-bg-pattern alt"></div>
+                    <div class="slide-content slide2-content">
+                        <div class="slide-header centered">
+                            <h2 class="slide-title-blue">Technology, Physical Facilities &amp; Happiness</h2>
+                            <p class="slide-subtitle">Understanding the Balance</p>
+                            <div class="title-underline blue"></div>
+                        </div>
+                        <div class="slide2-grid">
+                            <div class="slide2-col slide2-col-left">
+                                <div class="info-card info-card-blue">
+                                    <h3 class="info-card-title">Human Being = Self + Body</h3>
+                                    <div class="info-card-body">
+                                        <div class="info-need self-need">
+                                            <div class="need-icon">&#x1F9E0;</div>
+                                            <div class="need-text">
+                                                <strong>Self:</strong> Needs happiness, peace, understanding and good relationships.
+                                            </div>
+                                        </div>
+                                        <div class="info-need body-need">
+                                            <div class="need-icon">&#x1F4AA;</div>
+                                            <div class="need-text">
+                                                <strong>Body:</strong> Needs food, clothing, shelter, health and physical facilities.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="info-card info-card-green">
+                                    <h3 class="info-card-title">Role of Technology</h3>
+                                    <ul class="info-bullets">
+                                        <li>Technology provides <strong>comfort, convenience</strong> and <strong>better facilities</strong>.</li>
+                                        <li>It helps us in <strong>learning, communication, coding</strong> and daily activities.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="info-card info-card-red">
+                                    <h3 class="info-card-title">But Technology &ne; Happiness</h3>
+                                    <ul class="info-bullets">
+                                        <li>More gadgets and facilities can improve <strong>comfort</strong>, but they do not automatically give <strong>lasting happiness</strong>.</li>
+                                        <li>Happiness comes from <strong>right understanding</strong>, <strong>healthy relationships</strong> and <strong>inner harmony</strong>.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="slide2-col slide2-col-right">
+                                <div class="flow-card">
+                                    <h3 class="flow-title">
+                                        <span class="flow-icon">&#x1F504;</span> Simple Concept Flow
+                                    </h3>
+                                    <div class="flow-steps">
+                                        <div class="flow-step step-blue">
+                                            <span class="flow-step-text">Technology &amp; Physical Facilities</span>
+                                        </div>
+                                        <div class="flow-arrow">&darr;</div>
+                                        <div class="flow-step step-blue2">
+                                            <span class="flow-step-text">Comfort &amp; Convenience</span>
+                                        </div>
+                                        <div class="flow-arrow">&darr;</div>
+                                        <div class="flow-step step-green">
+                                            <span class="flow-step-text">Useful for the Body</span>
+                                        </div>
+                                        <div class="flow-arrow">&darr;</div>
+                                        <div class="flow-step step-yellow">
+                                            <span class="flow-step-text">But Happiness needs more than Comfort</span>
+                                        </div>
+                                        <div class="flow-arrow">&darr;</div>
+                                        <div class="flow-step step-red">
+                                            <span class="flow-step-text">Right Understanding + Relationships + Harmony</span>
+                                        </div>
+                                        <div class="flow-arrow">&darr;</div>
+                                        <div class="flow-step step-final">
+                                            <span class="flow-step-text">&#x2728; Balanced &amp; Happy Life &#x2728;</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="image-click-card" onclick="openImageModal()">
+                                    <div class="image-wrapper">
+                                        <img src="2.jpeg" alt="Concept Illustration" class="clickable-image">
+                                        <div class="image-overlay-hint">
+                                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                                <path fill="#ffffff" d="M15 3l2.3 2.3-4.89 4.88-2.5-2.5L3 17.25V21h3.75L11.61 16.14l2.5 2.5 4.88-4.88L21 13V3h-6zm0 2h3.75L12 11.75 8.25 8 15 5zM5 18.25l6.88-6.88 2.5 2.5L7.5 20.75H5v-2.5z"/>
+                                            </svg>
+                                            <span>Click to Expand</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 3: Real-Life Example — MCA Student's Daily Life -->
+                <section class="slide slide-3" data-slide="3">
+                    <div class="slide-bg-pattern"></div>
+                    <div class="slide-content slide3-content">
+                        <div class="slide-header slide3-header">
+                            <h2 class="slide-title-green">Real-Life Example &mdash; An MCA Student's Daily Life</h2>
+                            <p class="slide3-quote">&#x1F4BB; "Technology Makes Life Easier &mdash; But Balance Creates Happiness"</p>
+                            <div class="title-underline green"></div>
+                        </div>
+                        <div class="slide3-grid">
+                            <div class="slide3-col slide3-col-left">
+                                <div class="example-section-title">
+                                    <span class="es-icon">&#x1F4D6;</span> Example: MCA Student's Routine
+                                </div>
+                                <div class="example-cards">
+                                    <div class="ex-card ex-blue">
+                                        <div class="ex-header">
+                                            <span class="ex-num">1</span>
+                                            <span class="ex-icon">&#x1F4DA;</span>
+                                            <h4>Learning</h4>
+                                        </div>
+                                        <p>Laptop + Internet + AI tools &rarr; Makes coding, assignments and project <strong>learning easier</strong>.</p>
+                                    </div>
+                                    <div class="ex-card ex-green">
+                                        <div class="ex-header">
+                                            <span class="ex-num">2</span>
+                                            <span class="ex-icon">&#x1F4F1;</span>
+                                            <h4>Communication</h4>
+                                        </div>
+                                        <p>Smartphone + WhatsApp/Email &rarr; <strong>Quick communication</strong> with teachers and friends.</p>
+                                    </div>
+                                    <div class="ex-card ex-yellow">
+                                        <div class="ex-header">
+                                            <span class="ex-num">3</span>
+                                            <span class="ex-icon">&#x1FA91;</span>
+                                            <h4>Physical Comfort</h4>
+                                        </div>
+                                        <p>Laptop, Wi-Fi, comfortable room &rarr; Provides <strong>good facilities</strong> for studying.</p>
+                                    </div>
+                                    <div class="ex-card ex-red">
+                                        <div class="ex-header">
+                                            <span class="ex-num">4</span>
+                                            <span class="ex-icon">&#x26A0;&#xFE0F;</span>
+                                            <h4>The Problem</h4>
+                                        </div>
+                                        <p>Continuous screen time, social media, notifications and late-night coding &rarr; <strong>Stress, distraction and lack of sleep</strong>.</p>
+                                    </div>
+                                    <div class="ex-card ex-purple">
+                                        <div class="ex-header">
+                                            <span class="ex-num">5</span>
+                                            <span class="ex-icon">&#x2696;&#xFE0F;</span>
+                                            <h4>The Balance</h4>
+                                        </div>
+                                        <p>Use technology as a tool, but also include:</p>
+                                        <div class="balance-tags">
+                                            <span>&#x1F634; Proper Sleep</span>
+                                            <span>&#x1F3C3; Exercise</span>
+                                            <span>&#x1F46A; Family/Friends</span>
+                                            <span>&#x2615; Breaks</span>
+                                            <span>&#x1F3AF; Focused Study</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide3-col slide3-col-right">
+                                <div class="flow-card flow-card-s3">
+                                    <h3 class="flow-title flow-title-s3">
+                                        <span class="flow-icon">&#x1F504;</span> Concept Flow
+                                    </h3>
+                                    <div class="flow-steps flow-steps-s3">
+                                        <div class="flow-step fstep-blue">
+                                            <span class="flow-step-text">Technology</span>
+                                        </div>
+                                        <div class="flow-arrow flow-arrow-s3">&darr;</div>
+                                        <div class="flow-step fstep-blue2">
+                                            <span class="flow-step-text">Easy Learning &amp; Comfort</span>
+                                        </div>
+                                        <div class="flow-arrow flow-arrow-s3">&darr;</div>
+                                        <div class="flow-step fstep-red">
+                                            <span class="flow-step-text">&#x26A0; Excessive Use &rarr; Stress / Distraction</span>
+                                        </div>
+                                        <div class="flow-arrow flow-arrow-s3">&darr;</div>
+                                        <div class="flow-step fstep-purple">
+                                            <span class="flow-step-text">Right Balance</span>
+                                        </div>
+                                        <div class="flow-arrow flow-arrow-s3">&darr;</div>
+                                        <div class="flow-step fstep-final">
+                                            <span class="flow-step-text">&#x1F60A; Better Learning + Healthy Body + Happiness</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hawking-card">
+                                    <div class="hawking-title">
+                                        <span class="hawking-icon">&#x1F31F;</span>
+                                        <h3>Real-Life Example: Dr. Stephen Hawking</h3>
+                                    </div>
+                                    <div class="hawking-body">
+                                        <div class="image-click-card image-click-card-hawking" onclick="openImageModal2()">
+                                            <div class="image-wrapper">
+                                                <img src="black.jpeg" alt="Dr. Stephen Hawking" class="clickable-image">
+                                                <div class="image-overlay-hint">
+                                                    <svg viewBox="0 0 24 24" width="20" height="20">
+                                                        <path fill="#ffffff" d="M15 3l2.3 2.3-4.89 4.88-2.5-2.5L3 17.25V21h3.75L11.61 16.14l2.5 2.5 4.88-4.88L21 13V3h-6zm0 2h3.75L12 11.75 8.25 8 15 5zM5 18.25l6.88-6.88 2.5 2.5L7.5 20.75H5v-2.5z"/>
+                                                    </svg>
+                                                    <span>Click to Expand</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hawking-text">
+                                            <p><strong>Stephen Hawking</strong> was almost completely paralyzed due to ALS. He used <strong>technology</strong> (computer voice, special software) to communicate and write his world-famous theories.</p>
+                                            <div class="hawking-lesson">
+                                                <strong>Lesson:</strong> Technology was his tool, but his <strong>determination, curiosity and positive attitude</strong> gave him <em>true happiness and greatness</em>.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 4: Interview Video -->
+                <section class="slide slide-4" data-slide="4">
+                    <div class="slide-content slide-4-content">
+                        <div class="video-container interview-video-container" id="interview-video-container">
+                            <video id="interview-video" class="intro-video" playsinline>
+                                <source src="interview.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-overlay" id="interview-video-overlay">
+                                <div class="video-title-overlay">
+                                    <h1 class="main-title" style="font-size:40px;">Interview</h1>
+                                    <p class="sub-title" style="font-size:20px;">Universal Human Values</p>
+                                </div>
+                                <button class="play-button" id="interview-play-button" onclick="playInterviewVideo()">
+                                    <svg viewBox="0 0 24 24" width="48" height="48">
+                                        <path fill="#ffffff" d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </button>
+                                <div class="video-prompt">Click to Play Interview Video</div>
+                            </div>
+                            <div class="video-controls interview-controls" id="interview-video-controls" style="display: none;">
+                                <button class="vcontrol-btn" id="iv-play-pause" onclick="toggleInterviewPause()">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" id="interview-pause-icon">
+                                        <path fill="#ffffff" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                                    </svg>
+                                </button>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar" id="interview-video-progress"></div>
+                                </div>
+                                <span class="video-time" id="interview-video-time">0:00</span>
+                                <button class="vcontrol-btn interview-fullscreen-btn" onclick="toggleInterviewFullscreen()" title="Fullscreen">
+                                    <svg viewBox="0 0 24 24" width="22" height="22" id="interview-fs-icon">
+                                        <path fill="#ffffff" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 5: Analysis — Self & Body (Stephen Hawking) -->
+                <section class="slide slide-5" data-slide="5">
+                    <div class="slide-bg-pattern alt"></div>
+                    <div class="slide-content slide5-content">
+                        <div class="slide5-header">
+                            <h2 class="slide5-main-title">Analysis: Understanding Self and Body</h2>
+                            <p class="slide5-subtitle">Case of Dr. Stephen Hawking</p>
+                            <div class="title-underline blue"></div>
+                        </div>
+                        <div class="slide5-grid">
+                            <!-- SELF Column -->
+                            <div class="s5-col s5-col-self">
+                                <div class="s5-col-header s5-self-header">
+                                    <span class="s5-col-icon">&#x1F9E0;</span>
+                                    <h3>SELF</h3>
+                                </div>
+                                <div class="s5-section">
+                                    <div class="s5-section-title">Needs:</div>
+                                    <ul class="s5-list">
+                                        <li>Happiness</li>
+                                        <li>Peace</li>
+                                        <li>Knowledge &amp; understanding</li>
+                                        <li>Meaning &amp; purpose</li>
+                                        <li>Relationships</li>
+                                    </ul>
+                                </div>
+                                <div class="s5-section">
+                                    <div class="s5-section-title">Activities:</div>
+                                    <ul class="s5-list">
+                                        <li>Thinking</li>
+                                        <li>Learning</li>
+                                        <li>Understanding</li>
+                                        <li>Making decisions</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- BODY Column -->
+                            <div class="s5-col s5-col-body">
+                                <div class="s5-col-header s5-body-header">
+                                    <span class="s5-col-icon">&#x1F9CD;</span>
+                                    <h3>BODY</h3>
+                                </div>
+                                <div class="s5-section">
+                                    <div class="s5-section-title">Needs:</div>
+                                    <ul class="s5-list">
+                                        <li>Food &amp; nutrition</li>
+                                        <li>Rest &amp; sleep</li>
+                                        <li>Healthcare</li>
+                                        <li>Physical comfort</li>
+                                        <li>Assistive facilities</li>
+                                    </ul>
+                                </div>
+                                <div class="s5-section">
+                                    <div class="s5-section-title">Activities:</div>
+                                    <ul class="s5-list">
+                                        <li>Speaking / communicating</li>
+                                        <li>Movement</li>
+                                        <li>Physical actions</li>
+                                        <li>Using the body for daily tasks</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Hawking Analysis Column -->
+                            <div class="s5-col s5-col-analysis">
+                                <div class="s5-col-header s5-analysis-header">
+                                    <span class="s5-col-icon">&#x1F31F;</span>
+                                    <h3>Stephen Hawking &mdash; Analysis</h3>
+                                </div>
+                                <div class="s5-flow">
+                                    <div class="s5-flow-item s5-flow-body">
+                                        <div class="s5-flow-label">Body</div>
+                                        <p>ALS severely affected his movement and speech. He needed physical care and assistive technology.</p>
+                                    </div>
+                                    <div class="s5-flow-arrow">&#x2B07;&#xFE0F;</div>
+                                    <div class="s5-flow-item s5-flow-tech">
+                                        <div class="s5-flow-label">Technology</div>
+                                        <p>A computer-based communication system helped him communicate and continue his scientific work.</p>
+                                    </div>
+                                    <div class="s5-flow-arrow">&#x2B07;&#xFE0F;</div>
+                                    <div class="s5-flow-item s5-flow-self">
+                                        <div class="s5-flow-label">Self</div>
+                                        <p>His thinking, learning, curiosity, purpose and relationships continued even when his physical abilities were greatly limited.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 6: MCA Student Reflection -->
+                <section class="slide slide-6" data-slide="6">
+                    <div class="slide-bg-gradient blue"></div>
+                    <div class="slide-content slide6-content">
+                        <div class="slide-header centered slide6-header">
+                            <h2 class="slide-title-white">What I Understood as an MCA Student</h2>
+                            <p class="slide6-subtitle">Key Takeaways &amp; Personal Reflections</p>
+                            <div class="title-underline white"></div>
+                        </div>
+                        <div class="slide6-grid-container">
+                            <div class="slide6-col-left">
+                                <div class="slide6-card">
+                                    <div class="slide6-card-icon s6-icon-blue">&#x1F9E0;</div>
+                                    <div class="slide6-card-body">
+                                        <h3>1. I Understood My Real Needs</h3>
+                                        <p>I need <strong>happiness, peace, knowledge and good relationships</strong> &mdash; not only physical facilities.</p>
+                                    </div>
+                                </div>
+                                <div class="slide6-card">
+                                    <div class="slide6-card-icon s6-icon-green">&#x1F4BB;</div>
+                                    <div class="slide6-card-body">
+                                        <h3>2. Technology is a Tool</h3>
+                                        <p>My laptop, smartphone and AI tools should <strong>support my goals</strong>, not control my life.</p>
+                                    </div>
+                                </div>
+                                <div class="slide6-card">
+                                    <div class="slide6-card-icon s6-icon-yellow">&#x2696;&#xFE0F;</div>
+                                    <div class="slide6-card-body">
+                                        <h3>3. I Need Balance</h3>
+                                        <p>Too much screen time and continuous work can disturb my health and peace. I need a <strong>balance between study, technology and personal life</strong>.</p>
+                                    </div>
+                                </div>
+                                <div class="slide6-card">
+                                    <div class="slide6-card-icon s6-icon-red">&#x1F3AF;</div>
+                                    <div class="slide6-card-body">
+                                        <h3>4. Purpose is Important</h3>
+                                        <p>Learning and building my career give me a <strong>sense of purpose</strong>. Physical comfort alone cannot give lasting satisfaction.</p>
+                                    </div>
+                                </div>
+                                <div class="slide6-card">
+                                    <div class="slide6-card-icon s6-icon-purple">&#x1F91D;</div>
+                                    <div class="slide6-card-body">
+                                        <h3>5. Relationships Matter</h3>
+                                        <p>Spending time with <strong>family, friends and teachers</strong> is also important for a happy and balanced life.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slide6-col-right">
+                                <div class="slide6-insight-card">
+                                    <div class="slide6-insight-header">
+                                        <span class="slide6-insight-icon">&#x1F4A1;</span>
+                                        <h3>Key Reflection</h3>
+                                    </div>
+                                    <p class="slide6-insight-text">
+                                        <strong>Technology empowers us</strong> with capabilities, but <strong>Universal Human Values</strong> guide us to true fulfillment, harmony, and lasting happiness.
+                                    </p>
+                                </div>
+
+                                <div class="image-click-card slide6-image-card" onclick="openUnderstandModal()">
+                                    <div class="image-wrapper">
+                                        <img src="understand.jpeg" alt="Understanding Concept" class="clickable-image">
+                                        <div class="image-overlay-hint">
+                                            <svg viewBox="0 0 24 24" width="20" height="20">
+                                                <path fill="#ffffff" d="M15 3l2.3 2.3-4.89 4.88-2.5-2.5L3 17.25V21h3.75L11.61 16.14l2.5 2.5 4.88-4.88L21 13V3h-6zm0 2h3.75L12 11.75 8.25 8 15 5zM5 18.25l6.88-6.88 2.5 2.5L7.5 20.75H5v-2.5z"/>
+                                            </svg>
+                                            <span>Click to Expand</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 7: MCA Student Perspective -->
+                <section class="slide slide-7" data-slide="7">
+                    <div class="slide-bg-pattern"></div>
+                    <div class="slide-content">
+                        <div class="slide-header centered">
+                            <h2 class="slide-title-green">MCA Student Perspective</h2>
+                            <div class="title-underline green"></div>
+                        </div>
+                        <div class="perspective-boxes">
+                            <div class="persp-box pblue">
+                                <div class="persp-icon">&#x1F4A1;</div>
+                                <h4>Academic Growth</h4>
+                                <p>Balancing technical skills with human values for holistic development.</p>
+                            </div>
+                            <div class="persp-box pgreen">
+                                <div class="persp-icon">&#x1F91D;</div>
+                                <h4>Team Harmony</h4>
+                                <p>Working in diverse teams with mutual respect and shared goals.</p>
+                            </div>
+                            <div class="persp-box pyellow">
+                                <div class="persp-icon">&#x1F3AF;</div>
+                                <h4>Career Vision</h4>
+                                <p>Building careers that contribute to society and personal fulfillment.</p>
+                            </div>
+                            <div class="persp-box pred">
+                                <div class="persp-icon">&#x1F331;</div>
+                                <h4>Ethical Coding</h4>
+                                <p>Writing software that respects privacy, diversity, and human dignity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SLIDE 8: Thank You -->
+                <section class="slide slide-8" data-slide="8">
+                    <div class="slide-bg-gradient mixed"></div>
+                    <div class="slide-content content-centered slide8-content">
+                        <div class="conclusion-card slide8-card">
+                            <div class="slide8-layout">
+                                <!-- Left Column: thank.mp4 Video Player + Presenter Info -->
+                                <div class="slide8-left">
+                                    <div class="slide8-video-container" id="thank-video-container">
+                                        <video id="thank-video" class="slide8-video" playsinline>
+                                            <source src="thank.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <div class="video-overlay slide8-video-overlay" id="thank-video-overlay">
+                                            <button class="play-button slide8-play-btn" id="thank-play-button" onclick="playThankVideo()">
+                                                <svg viewBox="0 0 24 24" width="36" height="36">
+                                                    <path fill="#ffffff" d="M8 5v14l11-7z"/>
+                                                </svg>
+                                            </button>
+                                            <div class="video-prompt slide8-video-prompt">Play Thank You Video</div>
+                                        </div>
+                                        <div class="video-controls slide8-video-controls" id="thank-video-controls" style="display: none;">
+                                            <button class="vcontrol-btn" id="tv-play-pause" onclick="toggleThankPause()">
+                                                <svg viewBox="0 0 24 24" width="20" height="20" id="thank-pause-icon">
+                                                    <path fill="#ffffff" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                                                </svg>
+                                            </button>
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar" id="thank-video-progress"></div>
+                                            </div>
+                                            <span class="video-time" id="thank-video-time">0:00</span>
+                                            <button class="vcontrol-btn" onclick="toggleThankFullscreen()" title="Fullscreen">
+                                                <svg viewBox="0 0 24 24" width="20" height="20">
+                                                    <path fill="#ffffff" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="slide8-presenter-box">
+                                        <span class="presenter-label">Presented by:</span>
+                                        <h3 class="presenter-name">Harshad Teli</h3>
+                                        <span class="presenter-class">MCA-I</span>
+                                    </div>
+                                </div>
+
+                                <!-- Right Column: Header, Quote, Tags, Q&A, Restart -->
+                                <div class="slide8-right">
+                                    <div class="slide8-header">
+                                        <h2 class="slide8-title">Thank You for Listening &#x1F64F;</h2>
+                                        <div class="title-underline mixed" style="margin: 0 auto 6px;"></div>
+                                    </div>
+
+                                    <div class="slide8-quote-box">
+                                        <p class="slide8-quote">&ldquo;Technology can make life comfortable,<br>but harmony makes life meaningful.&rdquo;</p>
+                                    </div>
+
+                                    <div class="slide8-tags">
+                                        <span class="s8-tag s8-blue">Technology</span>
+                                        <span class="s8-dot">&bull;</span>
+                                        <span class="s8-tag s8-green">Self</span>
+                                        <span class="s8-dot">&bull;</span>
+                                        <span class="s8-tag s8-yellow">Body</span>
+                                        <span class="s8-dot">&bull;</span>
+                                        <span class="s8-tag s8-red">Happiness</span>
+                                        <span class="s8-dot">&bull;</span>
+                                        <span class="s8-tag s8-purple">Harmony</span>
+                                    </div>
+
+                                    <div class="slide8-qa-badge">
+                                        <span class="qa-icon">&#x1F4AC;</span>
+                                        <span class="qa-text">Any Questions?</span>
+                                    </div>
+
+                                    <button class="restart-btn slide8-restart" onclick="goToSlide(1)">
+                                        <svg viewBox="0 0 24 24" width="18" height="18">
+                                            <path fill="#fff" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+                                        </svg>
+                                        <span>&#x2728; Thank You &bull; Restart &#x2728;</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <div class="bottom-controls">
+            <button class="nav-btn" id="prev-btn" onclick="prevSlide()">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="#5f6368" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+                <span>Previous</span>
+            </button>
+
+            <div class="slide-dots" id="slide-dots"></div>
+
+            <button class="nav-btn" id="next-btn" onclick="nextSlide()">
+                <span>Next</span>
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="#5f6368" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="progress-indicator">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+    </div>
+
+    <div id="image-modal" class="image-modal" onclick="closeImageModal(event)">
+        <div class="image-modal-backdrop"></div>
+        <div class="image-modal-content" onclick="event.stopPropagation()">
+            <button class="image-modal-close" onclick="closeImageModal()" aria-label="Close">
+                <svg viewBox="0 0 24 24" width="28" height="28">
+                    <path fill="#ffffff" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+            <div class="image-modal-img-wrapper">
+                <img src="2.jpeg" alt="Concept Illustration" class="image-modal-img">
+            </div>
+        </div>
+    </div>
+
+    <div id="image-modal-2" class="image-modal" onclick="closeImageModal2(event)">
+        <div class="image-modal-backdrop"></div>
+        <div class="image-modal-content" onclick="event.stopPropagation()">
+            <button class="image-modal-close" onclick="closeImageModal2()" aria-label="Close">
+                <svg viewBox="0 0 24 24" width="28" height="28">
+                    <path fill="#ffffff" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+            <div class="image-modal-img-wrapper">
+                <img src="black.jpeg" alt="Dr. Stephen Hawking" class="image-modal-img">
+            </div>
+        </div>
+    </div>
+
+    <div id="image-modal-3" class="image-modal" onclick="closeUnderstandModal(event)">
+        <div class="image-modal-backdrop"></div>
+        <div class="image-modal-content" onclick="event.stopPropagation()">
+            <button class="image-modal-close" onclick="closeUnderstandModal()" aria-label="Close">
+                <svg viewBox="0 0 24 24" width="28" height="28">
+                    <path fill="#ffffff" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+            </button>
+            <div class="image-modal-img-wrapper">
+                <img src="understand.jpeg" alt="Understanding" class="image-modal-img">
+            </div>
+        </div>
+    </div>
+
+    <script src="UHV-script.js"></script>
+</body>
+</html>
