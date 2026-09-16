@@ -1,0 +1,106 @@
+# ==========================================
+# .gitignore for MCA Presentation Project
+# ==========================================
+
+# Operating System Files
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# IDE & Code Editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.user
+*.userosscache
+*.sln.docstates
+
+# Node & Package Managers (if used)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env.*
+
+# Build, Bundler & Temp Directories
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+.temp/
+.tmp/
+tmp/
+temp/
+
+# Logs and Runtime Data
+logs/
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Backup & Swap Files
+*.bak
+*.backup
+*.old
+*.orig
+*.swp
+*.swo
+*~
+
+# Compressed Archives (optional / temporary dumps)
+*.tar
+*.gz
+*.rar
+*.7z
+# Note: Keep project assets like mp4, jpeg, png, gif tracked in git
